@@ -6,38 +6,30 @@
     {% endblock %}
   </head>
   <body>
+  <div align="center">
   <p style="text-align:center"><img src="/media/main_logo.png" alt="main_logo" height="40%" width="30%" /></p>
+  <div align="right">
+  {% if user.is_authenticated %}
+  <a href="{% url 'account_email' %}">Change E-mail</a>|<a href="{% url 'account_logout' %}">Sign Out</a>|<a href="/store/register">점주회원가입</a>
+  {% else %}
+    <a href="{% url 'account_login' %}">Sign In</a>|<a href="{% url 'account_signup' %}">Sign Up</a>
+  {% endif %}
+  </div>  
     {% block body %}
-
-    {% if messages %}
-    <div>
-      <strong>Messages:</strong>
-      <ul>
-	{% for message in messages %}
-	<li>{{message}}</li>
-	{% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
     {% block content %}
     {% endblock %}
     {% endblock %}
-      <div>  
-  <ul>
-  {% if user.is_authenticated %}
-  <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-  <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-        <li><a href="/store/register">점주회원가입</a></li>
-  {% else %}
-  <li><a href="{% url 'account_login' %}">Sign In</a></li>
-  <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-
-  {% endif %}
-  </ul>
-  </div>
-
+ 
     {% block extra_body %}
+    <div align="center">
+    <a href="{% url 'account_login' %}">회사소개</a>|<a href="{% url 'account_signup' %}">광고</a>|    
+    <a href="{% url 'account_login' %}">제휴제안</a>|<a href="{% url 'account_signup' %}">이용약관</a>|   
+    <a href="{% url 'account_login' %}">개인정보처리방침</a>|<a href="{% url 'account_signup' %}">청소년보호정책</a>|    
+    <a href="{% url 'account_login' %}">정책</a>|<a href="{% url 'account_signup' %}">고객센터</a>|    
+    
+    </div>
     {% endblock %}
+
+    </div>
   </body>
 </html>
