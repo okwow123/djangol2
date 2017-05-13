@@ -5,14 +5,14 @@
     {% block extra_head %}
     {% endblock %}
   </head>
-  <body>
+  <body bgcolor="#DCD1D1">
   <div align="center">
   <p style="text-align:center"><img src="/media/main_logo.png" alt="main_logo" height="40%" width="30%" /></p>
   <div align="right">
   {% if user.is_authenticated %}
-  <a href="{% url 'account_email' %}">Change E-mail</a>|<a href="{% url 'account_logout' %}">Sign Out</a>|<a href="/store/register">점주회원가입</a>
+  <a href="{% url 'account_email' %}">정보변경</a>|<a href="{% url 'account_logout' %}">로그아웃</a>|<a href="/store/register">점주회원가입</a>
   {% else %}
-    <a href="{% url 'account_login' %}">Sign In</a>|<a href="{% url 'account_signup' %}">Sign Up</a>
+    <a href="{% url 'account_login' %}">로그인</a>|<a href="{% url 'account_signup' %}"> 회원가입</a>
   {% endif %}
   </div>  
     {% block body %}
