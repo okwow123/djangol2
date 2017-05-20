@@ -6,5 +6,6 @@ urlpatterns=[
     url(r'^manage/',views.manage,name='manage'),
     url(r'^register/',views.register,name='register'),
     url(r'^register_ok',views.register_ok,name='register_ok'),
+
 ]
 

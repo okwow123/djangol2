@@ -14,9 +14,6 @@ def list(request):
 def register(request):
     return render(request,'store/register.html',{})
 
-def manage(request):
-    return render(request,'store/manage.html',{})
-
 @csrf_exempt
 def register_ok(request):
     qs=Store.objects.exclude(store_email=request.POST.get('store_email'))
@@ -29,6 +26,8 @@ def register_ok(request):
             store_image=request.POST.get('store_image'),
             store_reward=request.POST.get('store_reward'),
         )
-    print request.POST.get('store_email')    
     return render(request,'store/register_ok.html',{})
+
+def manage(request):
+    return render(request,'store/manage.html',{})
 

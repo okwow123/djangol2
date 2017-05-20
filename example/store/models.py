@@ -13,3 +13,10 @@ class Store(models.Model):
     store_address=models.CharField(max_length=50)
     store_image=models.ImageField()
     store_reward=models.IntegerField(default=0)
+	
+class Meta: 
+    verbose_name = "Store"
+    verbose_name_plural = "Store"
+
+def __unicode__(self):
+    return self.service_name
