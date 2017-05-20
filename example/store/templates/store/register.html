@@ -1,10 +1,23 @@
-<h1>register</h1>
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}점주 회원가입 신청{% endblock %}
+
+{% block content %}
+<h1>점주 회원가입 신청</h1>
+
+<p>{% blocktrans %}아이디가 없으세요?<a href="{{ login_url }}"> 회원가입</a>.{% endblocktrans %}</p>
+
 <form method='post' action='/store/register_ok'>
-{{user.email}}
-email: <input type='email' name='store_email' id='store_email' required=true><br>
-name : <input type='text' name='store_name' id='store_name' required=true><br>
-address : <input type='text' name='store_address' id='store_address' required=true><br>
-image : <input type='file' name='store_image' id='store_image' required=true><br>
-store_reward : <input type='number' name='store_reward' id='store_reward' required=true><br> 
+<input type='hidden' name='store_email' id='store_email' required=true value="{{user.email}}"><br>
+점포 이름 : <input type='text' name='store_name' id='store_name' required=true><br>
+점포 주소 : <input type='text' name='store_address' id='store_address' required=true><br>
+점포 사진 : <input type='file' name='store_image' id='store_image' required=true><br>
+1회 광고 리워드 금액 : <input type='number' name='store_reward' id='store_reward' required=true><br> 
 <input type='submit' value='register'>
 </form>
+
+{% endblock %}
+
+
