@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     'allauth.socialaccount.providers.kakao',
     'allauth.socialaccount.providers.line',
     'store',
+    'cmanage',
 )
 
 
