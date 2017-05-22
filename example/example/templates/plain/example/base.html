@@ -16,11 +16,23 @@
   {% endif %}
   </div>  
 
-    {% block body %}
+    {% block body %}        
     <div>
+    
         <form method='post' action='/'>
             점포: <input type="input" name="storesearch" id="storesearch"><input type="submit" value="검색">
         </form>
+        <table border="2">
+        <tr>
+        <td>점포이름</td><td>점포주소</td><td>점포사진</td><td>점포리워드</td><td>등록</td>
+        </tr>
+        {% for store in store %}
+        <tr>
+        <td>{{ store.store_name }}</td><td>{{store.store_address}}</td><td><img src="/media/{{store.store_image}}" alt="main_logo" height="20%" width="20%" /></td><td>{{store.store_reward}}</td><td>{% if user.is_authenticated %}<input type="button" value="등록">{% else %}  {%endif%}</td>
+        {% endfor %}
+        </tr>
+        </table>
+
     </div>
   
     {% block content %}
