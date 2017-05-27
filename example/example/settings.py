@@ -158,7 +158,6 @@ AUTH_PASSWORD_VALIDATORS = [
     }
 ]
 
-
 try:
     from local_settings import *  # noqa
 except ImportError:

@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^accounts/profile/$', TemplateView.as_view(template_name='profile.html')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^store/', include('store.urls')),
+    url(r'^cmanage/',include('cmanage.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

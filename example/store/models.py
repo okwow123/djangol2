@@ -14,9 +14,9 @@ class Store(models.Model):
     store_image=models.ImageField()
     store_reward=models.IntegerField(default=0)
 	
-class Meta: 
-    verbose_name = "Store"
-    verbose_name_plural = "Store"
+    class Meta: 
+        verbose_name = "Store"
+        verbose_name_plural = "Store"
 
-def __unicode__(self):
-    return self.service_name
+    def __unicode__(self):
+        return self.service_name

@@ -16,6 +16,7 @@ def register(request):
 
 @csrf_exempt
 def register_ok(request):
+    #id1,store1 / id1,store2 / id1,store3,..... -> X
     qs=Store.objects.exclude(store_email=request.POST.get('store_email'))
     if request.method=='POST' and qs.exists():
         store=Store.objects.create(
